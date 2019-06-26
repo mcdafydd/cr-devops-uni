@@ -1,0 +1,41 @@
+{
+  "description": "An experiment in mixing Hugo and Polymer PRPL into a progressive web app blog.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mcdafydd/cr-devops-uni.git"
+  },
+  "name": "cr-devops-uni",
+  "version": "0.1.0",
+  "author": "Justin Ribeiro <justin@justinribeiro.com>",
+  "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^3.12.0",
+    "eslint-config-google": "^0.7.1",
+    "eslint-plugin-html": "^1.7.0",
+    "html-minifier": "^4.0.0",
+    "http2-push-manifest": "^1.0.1",
+    "rollup-plugin-babel-minify": "^8.0.0",
+    "rollup-plugin-node-resolve": "^4.2.2",
+    "wct-browser-legacy": "^1.0.2"
+  },
+  "scripts": {
+    "lint": "eslint . --ext js,html; exit 0;",
+    "build:clean": "rm -rf build && mkdir -p build/default/src && mkdir build/default/node_modules",
+    "build:copyDeps": "cp -r node_modules/@webcomponents/ build/default/node_modules  build/default/node_modules && cp -r node_modules/prismjs/ build/default/node_modules && cp -r src/polyfill-dynamicimport.js build/default/src",
+    "build:copyRoot": "cp index.html build/default && cp robots.txt build/default && cp manifest.json build/default && cp push_manifest.json build/default",
+    "build:copyData": "cp -r images/ build/default && cp -r data/ build/default && cp -r helpers/ build/default",
+    "build:minify": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --removeAttributeQuotes --remove-tag-whitespace --removeOptionalTags --minify-css true --output build/default/index.html build/default/index.html",
+    "build:modules": "rollup -c",
+    "build:dist": "yarn build:clean && yarn build:copyDeps && yarn build:copyRoot && yarn build:copyData && yarn build:minify && yarn build:modules"
+  },
+  "bugs": {
+    "url": "https://clearesultdev.visualstudio.com/Evolve/_workitems"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "lit-element": "^2.1.0",
+    "prismjs": "^1.16.0",
+    "workbox-window": "^4.2.0"
+  }
+}

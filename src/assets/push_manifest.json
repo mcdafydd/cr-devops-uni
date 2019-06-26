@@ -1,0 +1,9 @@
+{
+  "/": {
+    "src/cr-uni-pwa.js": {
+      "crossorigin": "anonymous",
+      "type": "script",
+      "weight": 1
+    }
+  }
+}

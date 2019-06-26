@@ -1,0 +1,8 @@
+node_modules
+
+# Ignore rollup/polymer generated content
+src/assets/build/
+
+# Ignore hugo generated content
+public
+resources

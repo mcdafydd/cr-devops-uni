@@ -1,0 +1,48 @@
+baseURL = "/"
+languageCode = "en-US"
+defaultContentLanguage = "en"
+#googleAnalytics = UA-123-45
+# {{ template "_internal/google_analytics_async.html" . }}
+
+title = "CLEAResult Devops University"
+theme = "hugo-theme-learn"
+themesdir = "themes"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+[params]
+  baseEditURL = "https://dev.azure.com/clearesultdev/Evolve/_git/cr-devops-uni?version=GBmaster&_a=contents"
+  # &path=%2F{{.Params.File.Name}}
+  description = "Learning CLEAResult Devops Tools and Practices"
+  author = "David McPike"
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "red"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[Languages]
+[Languages.en]
+title = "Documentation for Hugo Learn Theme"
+weight = 1
+languageName = "English"
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bullhorn'></i> Latest changes"
+url = "/changelog"
+weight = 10
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-camera'></i> Showcases"
+url = "/showcase"
+weight = 11
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-fw fa-bookmark'></i> Resources"
+url = "/resources"
+weight = 12
+
+

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    <noscript>
+      <p>JavaScript appears to be turned off.
+      No problem, this Progressive Web App is Progressive!
+      Redirecting to static page...</p>
+      <meta http-equiv="refresh" content="0;url={{ noscript }}">
+    </noscript>
+    <cr-uni-pwa>
+      <header id="pageHeader" slot="header">
+        <div>
+          <img id="me" src="/images/icons/icon-152x152.png" alt="CLEAResult Logo">
+        </div>
+        <div>
+          <h1>CLEAResult Devops University</h1>
+            <nav>
+              <a href="/">Home</a>
+            </nav>
+        </div>
+      </header>
+      <section id="skeleton">
+        <p><hr><hr><hr><hr class="short"></p>
+        <p><hr><hr><hr><hr class="short"></p>
+        <p><hr><hr><hr><hr class="short"></p>
+      </section>
+      <footer id="pageFooter" slot="footer">
+        <div>
+         <section>
+         </section>
+          <section>
+            <h2>Meta Things</h2>
+            <p>Report any bugs on this site <a href="https://dev.azure.com/clearesultdev/Evolve/_workitems/create/Issue">here</a>.</p>
+          </section>
+        </div>
+        <div id="thanks">
+          <p>Made with ❤️ using <a href="https://lit-element.polymer-project.org/">Web Components</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
+        </div>
+      </footer>
+    </cr-uni-pwa>
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="./src/app.js"></script>
+  </body>
+</html>
